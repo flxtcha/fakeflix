@@ -1,0 +1,113 @@
+body{ 
+    padding: 0;
+    overflow-x: hidden;
+    margin: 0; 
+    background-color: #141414;
+    color: white; 
+    font-family: "Inter",sans-serif;
+}
+header, footer{
+    display: flex;
+    flex-direction: row;
+    height: 10vh; 
+    width: 100vw; 
+    background-color: #141414;
+    align-items: center;
+    gap: 1em; 
+}
+#header{
+    position: fixed;
+}
+#search{
+    margin-left: 60vw;
+    transform: scale(1.8) rotate(270deg);
+    -webkit-transform: scale(1.8) rotate(270deg);
+    -moz-transform: scale(1.8) rotate(270deg);
+    -ms-transform: scale(1.8) rotate(270deg);
+    -o-transform: scale(1.8) rotate(270deg);
+}
+#profile{
+    width: 2em;
+    height: 2em;
+    background-color: white;
+    border-radius: 12em;
+    -webkit-border-radius: 12em;
+    -moz-border-radius: 12em;
+    -ms-border-radius: 12em;
+    -o-border-radius: 12em;
+}
+#logo{
+    max-width: 100px; 
+    height: auto; 
+    margin-left: 4.5em; 
+}
+header a{
+    font-weight: 400;
+    color: #e5e5e5; 
+}
+header a:hover{
+    color: #333; 
+}
+h3{
+    margin-left: 3.5em; 
+}
+#popular_movies, #iconic_movies, #discover_movies{
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0; 
+    overflow: hidden;
+    width: 100vw; 
+    gap: .5em;
+    margin-left: 4em;
+}
+#popular_movies .titles img{ 
+    max-width: 200px; 
+    height: auto;
+    
+}
+#iconic_movies .titles img{ 
+    max-width: 200px; 
+    height: auto;
+}
+#discover_movies .titles img{ 
+    max-width: 200px; 
+    height: auto;
+}
+.scroll-left, .scroll-right{
+    position: absolute; 
+    width: 15px;
+    height: 15px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+}
+.scroll-left{
+    left: 0;
+    top: 19rem;
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    margin-left: 5em;
+}
+.scroll-right{
+    right: 0; 
+    top: 19rem;
+    margin-right: 1em;
+    transform: rotate(45deg);
+}
+#scroll-left2, #scroll-right2{
+    top: 42rem;
+}
+#scroll-left3, #scroll-right3{
+    top: 65rem;
+}
+@media (max-width: 1919px) {
+
+    header a{
+        color: transparent; 
+    }
+
+}
+

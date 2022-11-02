@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Netflix</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
+
+    </head>
+    <body>
+        <header>
+            <img id="logo" src="https://davidfakeflix.netlify.app/static/media/logo.32caff20.svg"><a style="padding-right: .5em;">
+            <a>Home</a>
+            <a>TV Series</a>
+            <a>Movies</a>
+            <a>New & Popular</a>
+            <a>My List</a>
+            <a id="search">&#8981;</a>
+            <div id="profile"></div>
+        </header>
+        <main>
+            <h3>Trending Now</h3>
+            <div id="container1">
+                <div id="popular_movies">
+                    <script>getTitleData("popular_movies");</script>
+                </div>
+                <span class="scroll-left" id="scroll-left1"></span>
+                <span class="scroll-right" id="scroll-right1"></span>
+                <script>
+                    document.getElementById("scroll-left1").onclick = function() {scroll("left", "popular_movies")}; 
+                    document.getElementById("scroll-right1").onclick = function() {scroll("right", "popular_movies")}; 
+                </script>
+            </div>
+            <h3>Classics</h3>
+            <div id="container2">
+                <div id="iconic_movies">
+                    <script>getTitleData("iconic_movies");</script>
+                </div>
+                <span class="scroll-left" id="scroll-left2"></span>
+                <span class="scroll-right" id="scroll-right2"></span>
+                <script>
+                    document.getElementById("scroll-left2").onclick = function() {scroll("left", "iconic_movies")}; 
+                    document.getElementById("scroll-right2").onclick = function() {scroll("right", "iconic_movies")}; 
+                </script>
+            </div>
+            <h3>Discover</h3>
+            <div id="container3">
+                <div id="discover_movies">
+                    <script>getTitleData("discover_movies");</script>
+                </div>
+                <span class="scroll-left" id="scroll-left3"></span>
+                <span class="scroll-right" id="scroll-right3"></span>
+                <script>
+                    document.getElementById("scroll-left3").onclick = function() {scroll("left", "discover_movies")}; 
+                    document.getElementById("scroll-right3").onclick = function() {scroll("right", "discover_movies")}; 
+                </script>
+            </div>
+        </main>
+        <footer>
+
+        </footer>
+    </body>
+</html>
