@@ -12,52 +12,58 @@
 
     </head>
     <body>
-        <header>
-            <div><img id="logo" src="https://davidfakeflix.netlify.app/static/media/logo.32caff20.svg"></div>
-            <div style="margin-left: auto" ><input placeholder="Search..." id="input" size="8vw" prefix="test"></input></div>
-            <label for="input"><p style="font-size: 1.6em">&#8981;</p></label>
-        </header>
-        <main>
-            <p>Trending Now</p>
-            <div class="container" id="container1">
-                <div class="carousel" id="popular_movies">
-                    <script>getTitleData("popular_movies");</script>
+            <header>
+                <div><img id="logo" src="https://davidfakeflix.netlify.app/static/media/logo.32caff20.svg"></div>
+                <p class="desktop">Home</p>
+                <p class="desktop">Tv Series</p>
+                <p class="desktop">Movies</p>
+                <p class="desktop">New & Popular</p>
+                <p class="desktop">My List</a>
+                <div style="margin-left: auto" ><p id="search" style="font-size: 2.5em">&#8981;</p></div>
+                <div class="profile" style=" background-color: #fff; width: 2em; height: 2em;"></div>
+            </header>
+            <main>
+                <p class="category">Trending Now</p>
+                <div class="container" id="container1">
+                    <div class="carousel" id="popular_movies">
+                        <script>getTitleData("popular_movies");</script>
+                    </div>
+                    <span class="scroll-left" id="scroll-left1"></span>
+                    <span class="scroll-right" id="scroll-right1"></span>
+                    <script>
+                        document.getElementById("scroll-left1").onclick = function() {scroll("left", "popular_movies")}; 
+                        document.getElementById("scroll-right1").onclick = function() {scroll("right", "popular_movies")}; 
+                    </script>
                 </div>
-                <span class="scroll-left" id="scroll-left1"></span>
-                <span class="scroll-right" id="scroll-right1"></span>
-                <script>
-                    document.getElementById("scroll-left1").onclick = function() {scroll("left", "popular_movies")}; 
-                    document.getElementById("scroll-right1").onclick = function() {scroll("right", "popular_movies")}; 
-                </script>
-            </div>
-            <p>Classics</p>
-            <div class="container" id="container2">
-                <div class="carousel" id="iconic_movies">
-                    <script>getTitleData("iconic_movies");</script>
+                <p class="category">Classics</p>
+                <div class="container" id="container2">
+                    <div class="carousel" id="iconic_movies">
+                        <script>getTitleData("iconic_movies");</script>
+                    </div>
+                    <span class="scroll-left" id="scroll-left2"></span>
+                    <span class="scroll-right" id="scroll-right2"></span>
+                    <script>
+                        document.getElementById("scroll-left2").onclick = function() {scroll("left", "iconic_movies")}; 
+                        document.getElementById("scroll-right2").onclick = function() {scroll("right", "iconic_movies")}; 
+                    </script>
                 </div>
-                <span class="scroll-left" id="scroll-left2"></span>
-                <span class="scroll-right" id="scroll-right2"></span>
-                <script>
-                    document.getElementById("scroll-left2").onclick = function() {scroll("left", "iconic_movies")}; 
-                    document.getElementById("scroll-right2").onclick = function() {scroll("right", "iconic_movies")}; 
-                </script>
-            </div>
-            <p>Discover</p>
-            <div class="container" id="container3">
-                <div class="carousel" id="discover_movies">
-                    <script>getTitleData("discover_movies");</script>
+                <p class="category">Discover</p>
+                <div class="container" id="container3">
+                    <div class="carousel" id="discover_movies">
+                        <script>getTitleData("discover_movies");</script>
+                    </div>
+                    <span class="scroll-left" id="scroll-left3"></span>
+                    <span class="scroll-right" id="scroll-right3"></span>
+                    <script>
+                        document.getElementById("scroll-left3").onclick = function() {scroll("left", "discover_movies")}; 
+                        document.getElementById("scroll-right3").onclick = function() {scroll("right", "discover_movies")}; 
+                    </script>
                 </div>
-                <span class="scroll-left" id="scroll-left3"></span>
-                <span class="scroll-right" id="scroll-right3"></span>
-                <script>
-                    document.getElementById("scroll-left3").onclick = function() {scroll("left", "discover_movies")}; 
-                    document.getElementById("scroll-right3").onclick = function() {scroll("right", "discover_movies")}; 
-                </script>
-            </div>
             
-        </main>
-        <footer>
-            <p>Tom Fletcher</p>
-        </footer>
+            </main>
+            <footer>
+                <p>Tom Fletcher</p>
+            </footer>
+        </div>
     </body>
 </html>

@@ -1,32 +1,38 @@
 /*Globals*/ 
 :root{
     --main-bg-color: #141414; 
-    --carousel-control-color: #d81f26; 
+    --carousel-control-color: #fff; 
     --footer-font-color: #333; 
 }
 *{ 
     margin: 0; 
     padding: 0;
+    outline: 0; 
+    color: white; 
     font-family: "Inter",sans-serif;
+    
 }
 body{
-    margin: 0 2% 0 2% ;
+    height: auto;
     background-color: var(--main-bg-color); 
+    margin-left: 4vw; 
+    margin-right: 4vw;
 }
 p{
-    color: white; 
     line-height: 100%;
 }
 /*Header and footer start here */ 
 header, footer{
+    position: relative;
     display: flex;
     flex-direction: row;
     height: 8vh; 
-    width: 100%; 
-    background-color: #141414;
+    background-color: transparent;
     align-items: center;
+    z-index: 2;
+    gap: 2em;
 }
-label{
+#search{
     transform: rotate(270deg);
     -webkit-transform: rotate(270deg);
     -moz-transform: rotate(270deg);
@@ -34,12 +40,10 @@ label{
     -o-transform: rotate(270deg);
 }
 #logo{
-    width: 8rem; 
+    width: 9em; 
     height: auto; 
 }
 footer{
-    position: fixed;
-    bottom: 0;
     justify-content: center;
 }
 footer p{
@@ -47,27 +51,30 @@ footer p{
 }
 /*Header and footer end here*/ 
 
-/*Movies carousel starts here */ 
-main {
-    max-width: 100%; 
-    height: auto; 
-    margin-top: 5vh;
+/*Featured title starts here */
+
+/*Featured title ends here */
+/*Movies carousel stats here */ 
+main{
+    position: relative;
+    margin: 70vh 0 0 0;
+    z-index: 10;
 }
 .container{
     position: relative;
     max-width: 100%;
-    height: 18vh;
+    display: flex;
+    align-items: center;
+    height: 24vh;
     margin: 1vh  0vh; 
-    z-index: 98;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 25px 20px -20px;
 }
 .scroll-left, .scroll-right{
     position: absolute;
-    width: 1vh;
-    height: 1vh;
+    width: 2.5vh;
+    height: 2.5vh;
     border-top: 2px solid var(--carousel-control-color);
     border-right: 2px solid var(--carousel-control-color);
-    top: 8vh;
+    top:10vh;
     background-color: transparent;
     z-index: 100;
 }
@@ -90,25 +97,70 @@ main {
 .carousel{
     position: absolute;
     display: flex;
-    width: 96vw;
+    max-width: 100%;
     overflow-x: hidden ;
     z-index: 99;
+    gap: .5%; 
+    align-items: center;
+    height: 24vh;
+
 }
 .carousel .titles img{
-    height: 18vh;
-    transition: transform 500ms;
-    -webkit-transition: transform 500ms;
-    -moz-transition: transform 500ms;
-    -ms-transition: transform 500ms;
-    -o-transition: transform 500ms, box-shadow 1s;
+    height: 20vh;
+    transition: transform 200ms;
+    -webkit-transition: transform 200ms;
+    -moz-transition: transform 200ms;
+    -ms-transition: transform 200ms;
+    -o-transition: transform 200ms;
+    padding: 2%;
+    border-radius: 4%;
+    -webkit-border-radius: 4%;
+    -moz-border-radius: 4%;
+    -ms-border-radius: 4%;
+    -o-border-radius: 4%;
+}
+.titles{
+    position: relative;
 }
 .carousel .titles img:hover{
-    transform: scale(.90);
-    -webkit-transform: scale(.90);
-    -moz-transform: scale(.90);
-    -ms-transform: scale(.90);
-    -o-transform: scale(.90);
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
     box-shadow: rgba(0, 0, 0, 0.3)  0px 20px 30px -10px;
+}
+.Movie_Title{
+    position: absolute;
+    bottom: 10px; 
+    scale: 0;
+    transition: scale 500ms;
+    -webkit-transition: scale 500ms;
+    -moz-transition: scale 500ms;
+    -ms-transition: scale 500ms;
+    -o-transition: scale 500ms;
+    z-index: 10;
+    color: #fff;
+    background-color: var(--main-bg-color);
+    font-weight: 700;  
+}
+.carousel .titles img:hover ~ .Movie_Title{
+    scale: 1; 
+
+}
+.category {
+    font-weight: 600;
+    font-size: large;
 }
 /*Movies carousel ends here */ 
 
+@media only screen and (max-width: 822px) {
+   .desktop{
+        transform: scale(0);
+        -webkit-transform: scale(0);
+        -moz-transform: scale(0);
+        -ms-transform: scale(0);
+        -o-transform: scale(0);
+        position: absolute;
+}
+}

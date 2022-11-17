@@ -34,7 +34,7 @@ async function getTitleData(titleCat){
 
     for (let x = 0; x < data["results"].length; x++){
 
-        posterFullUrl = posterBaseUrl + data["results"][x]["poster_path"];
+        posterFullUrl = posterBaseUrl + data["results"][x]["backdrop_path"];
 
         title = data["results"][x]["title"];
         if (title == null) title = data["results"][x]["name"];
@@ -45,10 +45,15 @@ async function getTitleData(titleCat){
         div.id = `${title}`;
         document.getElementById(titleCat).appendChild(div); 
 
+        img_text = document.createElement("div");
+        newContent = document.createTextNode(`${title}`);
+        img_text.className = "Movie_Title"; 
+        img_text.appendChild(newContent);
         img = document.createElement("img");
         img.setAttribute("src", posterFullUrl);
         img.setAttribute("alt", title);
         div.appendChild(img);
+        div.appendChild(img_text); 
     }
 }
 
