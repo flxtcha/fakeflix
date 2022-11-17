@@ -1,113 +1,114 @@
-body{ 
-    padding: 0;
-    overflow-x: hidden;
+/*Globals*/ 
+:root{
+    --main-bg-color: #141414; 
+    --carousel-control-color: #d81f26; 
+    --footer-font-color: #333; 
+}
+*{ 
     margin: 0; 
-    background-color: #141414;
+    padding: 0;
     color: white; 
     font-family: "Inter",sans-serif;
 }
+body{
+    margin: 0 2% 0 2% ;
+    background-color: var(--main-bg-color); 
+}
+p{
+    line-height: 100%;
+}
+/*Header and footer start here */ 
 header, footer{
     display: flex;
     flex-direction: row;
-    height: 10vh; 
-    width: 100vw; 
+    height: 8vh; 
+    width: 100%; 
     background-color: #141414;
     align-items: center;
-    gap: 1em; 
 }
-#header{
-    position: fixed;
-}
-#search{
-    margin-left: 60vw;
-    transform: scale(1.8) rotate(270deg);
-    -webkit-transform: scale(1.8) rotate(270deg);
-    -moz-transform: scale(1.8) rotate(270deg);
-    -ms-transform: scale(1.8) rotate(270deg);
-    -o-transform: scale(1.8) rotate(270deg);
-}
-#profile{
-    width: 2em;
-    height: 2em;
-    background-color: white;
-    border-radius: 12em;
-    -webkit-border-radius: 12em;
-    -moz-border-radius: 12em;
-    -ms-border-radius: 12em;
-    -o-border-radius: 12em;
+label{
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
 }
 #logo{
-    max-width: 100px; 
+    width: 8rem; 
     height: auto; 
-    margin-left: 4.5em; 
 }
-header a{
-    font-weight: 400;
-    color: #e5e5e5; 
+footer{
+    position: fixed;
+    bottom: 0;
+    justify-content: center;
 }
-header a:hover{
-    color: #333; 
+footer p{
+    color: var(--footer-font-color);
 }
-h3{
-    margin-left: 3.5em; 
+/*Header and footer end here*/ 
+
+/*Movies carousel starts here */ 
+main {
+    max-width: 100%; 
+    height: auto; 
+    margin-top: 5vh;
 }
-#popular_movies, #iconic_movies, #discover_movies{
+.container{
     position: relative;
-    display: flex;
-    align-items: center;
-    margin: 0; 
-    overflow: hidden;
-    width: 100vw; 
-    gap: .5em;
-    margin-left: 4em;
-}
-#popular_movies .titles img{ 
-    max-width: 200px; 
-    height: auto;
-    
-}
-#iconic_movies .titles img{ 
-    max-width: 200px; 
-    height: auto;
-}
-#discover_movies .titles img{ 
-    max-width: 200px; 
-    height: auto;
+    max-width: 100%;
+    height: 18vh;
+    margin: 1vh  0vh; 
+    z-index: 98;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 25px 20px -20px;
 }
 .scroll-left, .scroll-right{
-    position: absolute; 
-    width: 15px;
-    height: 15px;
-    border-top: 2px solid #fff;
-    border-right: 2px solid #fff;
+    position: absolute;
+    width: 1vh;
+    height: 1vh;
+    border-top: 2px solid var(--carousel-control-color);
+    border-right: 2px solid var(--carousel-control-color);
+    top: 8vh;
+    background-color: transparent;
+    z-index: 100;
 }
 .scroll-left{
     left: 0;
-    top: 19rem;
     transform: rotate(-135deg);
     -webkit-transform: rotate(-135deg);
     -moz-transform: rotate(-135deg);
     -ms-transform: rotate(-135deg);
     -o-transform: rotate(-135deg);
-    margin-left: 5em;
 }
 .scroll-right{
-    right: 0; 
-    top: 19rem;
-    margin-right: 1em;
+    right: 0;
     transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
 }
-#scroll-left2, #scroll-right2{
-    top: 42rem;
+.carousel{
+    position: absolute;
+    display: flex;
+    width: 96vw;
+    overflow-x: hidden ;
+    z-index: 99;
 }
-#scroll-left3, #scroll-right3{
-    top: 65rem;
+.carousel .titles img{
+    height: 18vh;
+    transition: transform 500ms;
+    -webkit-transition: transform 500ms;
+    -moz-transition: transform 500ms;
+    -ms-transition: transform 500ms;
+    -o-transition: transform 500ms, box-shadow 1s;
 }
-@media (max-width: 1919px) {
-
-    header a{
-        color: transparent; 
-    }
-
+.carousel .titles img:hover{
+    transform: scale(.90);
+    -webkit-transform: scale(.90);
+    -moz-transform: scale(.90);
+    -ms-transform: scale(.90);
+    -o-transform: scale(.90);
+    box-shadow: rgba(0, 0, 0, 0.3)  0px 20px 30px -10px;
 }
+/*Movies carousel ends here */ 
 

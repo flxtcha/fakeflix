@@ -7,10 +7,6 @@ function scroll(direction, titleCat){
     }
 }
 
-/*
-    Takes a div section e.g. popular_movies
-    and appends popular movies to page using the MDB API 
-*/
 async function getTitleData(titleCat){
 
     let posterBaseUrl = "https://image.tmdb.org/t/p/w500"; 
