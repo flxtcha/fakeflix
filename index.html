@@ -12,22 +12,25 @@
 
     </head>
     <body>
+        <div class="features" id="feature">
             <header>
                 <div><img id="logo" src="https://davidfakeflix.netlify.app/static/media/logo.32caff20.svg"></div>
-                <p class="desktop">Home</p>
-                <p class="desktop">Tv Series</p>
-                <p class="desktop">Movies</p>
-                <p class="desktop">New & Popular</p>
-                <p class="desktop">My List</a>
-                <div style="margin-left: auto" ><p id="search" style="font-size: 2.5em">&#8981;</p></div>
+                <a href="" class="desktop">Home</a>
+                <a href="" class="desktop">Tv Series</a>
+                <a href="" class="desktop">Movies</a>
+                <a href="" class="desktop">New & Popular</a>
+                <a href="" class="desktop">My List</a>
+                <div id="search" style="margin-left: auto; font-size: 2.5em; transform: rotate(270deg);">&#8981;</div>
                 <div class="profile" style=" background-color: #fff; width: 2em; height: 2em;"></div>
             </header>
             <main>
                 <p class="category">Trending Now</p>
                 <div class="container" id="container1">
+                    <div class="stripe"></div>
                     <div class="carousel" id="popular_movies">
                         <script>getTitleData("popular_movies");</script>
                     </div>
+                    <div class="stripe" id="stripe-right"></div>
                     <span class="scroll-left" id="scroll-left1"></span>
                     <span class="scroll-right" id="scroll-right1"></span>
                     <script>
@@ -37,9 +40,11 @@
                 </div>
                 <p class="category">Classics</p>
                 <div class="container" id="container2">
+                    <div class="stripe"></div>
                     <div class="carousel" id="iconic_movies">
                         <script>getTitleData("iconic_movies");</script>
                     </div>
+                    <div class="stripe" id="stripe-right"></div>
                     <span class="scroll-left" id="scroll-left2"></span>
                     <span class="scroll-right" id="scroll-right2"></span>
                     <script>
@@ -49,9 +54,11 @@
                 </div>
                 <p class="category">Discover</p>
                 <div class="container" id="container3">
+                    <div class="stripe"></div>
                     <div class="carousel" id="discover_movies">
                         <script>getTitleData("discover_movies");</script>
                     </div>
+                    <div class="stripe" id="stripe-right"></div>
                     <span class="scroll-left" id="scroll-left3"></span>
                     <span class="scroll-right" id="scroll-right3"></span>
                     <script>

@@ -16,10 +16,11 @@ async function getTitleData(titleCat){
     let api_url; 
     let div; 
     let img; 
+    let feature_url;
+    let feature_title; 
 
     if (titleCat === "popular_movies"){ 
         api_url = "https://api.themoviedb.org/3/trending/all/day?api_key=55b9a3c310cb204d6335a3076f8ae53b";
-
     }
     else if (titleCat === "iconic_movies"){
         api_url = "https://api.themoviedb.org/3/movie/top_rated?api_key=55b9a3c310cb204d6335a3076f8ae53b&language=en-US&page=1"; 
@@ -31,10 +32,26 @@ async function getTitleData(titleCat){
 
     const response = await fetch(api_url);  
     const data = await response.json();
+    if (titleCat === "popular_movies"){
+        feature_url = posterBaseUrl + data["results"][1]["backdrop_path"]; 
+        feature_title = data["results"][1]["title"]; 
+        feature = document.getElementById("feature");
+        img = document.createElement("img"); 
+        text = document.createElement("p"); 
+        text.className = "title"; 
+        text.innerText = feature_title; 
+        img.setAttribute("src", feature_url);
+        img.className = "background-image"; 
+        feature.appendChild(img); 
+        feature.appendChild(text);
+    }
+
+
 
     for (let x = 0; x < data["results"].length; x++){
 
         posterFullUrl = posterBaseUrl + data["results"][x]["backdrop_path"];
+
 
         title = data["results"][x]["title"];
         if (title == null) title = data["results"][x]["name"];
