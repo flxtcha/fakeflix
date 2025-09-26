@@ -74,15 +74,14 @@ footer p{
     top: 0; 
     margin-right: -3%; 
     margin-left: -3%;
-    text-align: center;
 }
 .title{
     position: absolute;
     top: 20vh;
     color: #fff;
-    background-color: var(--main-bg-color); 
     font-size: 2.6em;
     border-radius: 5%;
+    font-weight: 700;
     -webkit-border-radius: 5%;
     -moz-border-radius: 5%;
     -ms-border-radius: 5%;
@@ -96,7 +95,7 @@ title ends here */
 main{
     position: relative;
     margin: 50vh 0 0 0;
-    z-index: 10;
+    z-index: 1;
 }
 .container{
     position: relative;
@@ -105,6 +104,7 @@ main{
     align-items: center;
     height: 24vh;
     margin: 1vh  0vh; 
+    justify-content: space-between;
 }
 .scroll-left, .scroll-right{
     position: absolute;
@@ -114,9 +114,10 @@ main{
     border-right: 2px solid var(--carousel-control-color);
     top:10vh;
     background-color: transparent;
-    z-index: 100;
+    z-index: 1;
 }
 .scroll-left{
+    z-index: 100;
     left: 0;
     transform: rotate(-135deg);
     -webkit-transform: rotate(-135deg);
@@ -125,6 +126,7 @@ main{
     -o-transform: rotate(-135deg);
 }
 .scroll-right{
+    z-index: 100;
     right: 0;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
@@ -143,14 +145,11 @@ main{
     height: 24vh;
 }
 .stripe{
-    z-index: 100;
+    z-index: 50;
     width: 1vw; 
     height: 100%;
-    background-color: #333;
+    background-color: #000;
     opacity: 0.5;
-}
-#stripe-right{
-    margin-left: auto; 
 }
 .carousel .titles img{
     height: 20vh;
